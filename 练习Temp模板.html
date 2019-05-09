@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="Temp--JS/artTemplate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="no1"></div>
+		
+		<script type="text/heml" id="temp">
+			{{if aa==200}}
+			<h3>成功</h3>
+			{{else if aa==404}}
+			<h3>木有</h3>
+			{{else}}
+			<h3>出错了</h3>
+			{{/if}}
+			
+			{{if bb==3}}
+				{{if aa==200}}
+				<h6>请求成功</h6>
+				{{else if aa==404}}
+				<h5>真的木有</h5>
+				{{else}}
+				<h3>联系别人吧</h3>
+				{{/if}}
+			{{else if bb==2}}
+			<h2>请求出现情况</h2>
+			{{else bb==1}}
+			<h1>啥也没了</h1>
+			{{/if}}
+		</script>
+		
+		<script type="text/javascript">
+			let data = {
+				
+				aa:300,
+				bb:2
+				
+			}
+			
+			let myhtml = template("temp",data);
+			
+			document.getElementById("no1").innerHTML = myhtml;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="Temp--JS/artTemplate.js"></script>
+	</head>
+	<body>
+		
+		<div id="no1"></div>
+		
+		<script type="text/html" id="temp">
+			<ul>
+				{{each films dymg ind}}
+				<li>
+					<span>{{ind}}</span>
+					<span>{{dymg.name}}</span>
+					<span>{{dymg.nation}}</span>
+				</li>
+				{{/each}}
+			</ul>
+			
+		</script>
+		
+		<script type="text/javascript">
+			let data = {
+				films:[
+					{name: "复联4", nation: "美国", actors: [{name: "克里斯·埃文斯"},{name: "布丽·拉尔森"},{name: "克里斯·海姆斯沃斯"}]},
+					{name: "何以为家", nation: "黎巴嫩,法国,美国", actors: [{name: "娜丁·拉巴基"},{name: "赞恩·阿尔·拉菲亚"},{name: "博鲁瓦蒂夫·特雷杰·班科尔"}]},
+
+				]
+			}
+			
+			let myhtml = template("temp",data);
+			
+			document.getElementById("no1").innerHTML = myhtml;
+			
+		</script>
+		
+	</body>
+</html>
